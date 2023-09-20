@@ -25,3 +25,30 @@
 .carousel-caption p{
     color: #ffffff;
 }
+.rowposter{
+  display: flex;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+.rowimg {
+  max-height: 250px;
+  object-fit: contain;
+  width: 100%;
+  box-sizing: content-box;
+  transition: transform 450ms;
+  margin-right: 7px;
+
+}
+
+.rowimg:hover{
+  transform: scale(1.10);
+  cursor: pointer;
+}
+.largerposter{
+  max-height: 300px;
+}
+
+.rowposter::-webkit-scrollbar{
+  display: none;
+}

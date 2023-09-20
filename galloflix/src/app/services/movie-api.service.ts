@@ -19,5 +19,7 @@ export class MovieApiService {
   trendingMovieData(): Observable<any> {
     return this.http.get(`${this.baseUrl}/trending/movie/day?api_Key}&language=pt-BR`);
   }
-
+  //Movie Details API DAta
+  movieDetails(data: any) Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${data}?api_Key=${this.apiKey}&language=pt-BR`);
 }
