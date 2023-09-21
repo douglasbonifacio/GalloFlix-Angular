@@ -1,4 +1,4 @@
-import { HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -16,10 +16,23 @@ export class MovieApiService {
   bannerApiData(): Observable<any> {
     return this.http.get(`${this.baseUrl}/trending/all/week?api_key=${this.apiKey}&language=pt-BR`);
   }
-  trendingMovieData(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/trending/movie/day?api_Key}&language=pt-BR`);
+
+  trendingMovieApiData(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/trending/movie/day?api_key=${this.apiKey}&language=pt-BR`);
   }
+
   //Movie Details API DAta
-  movieDetails(data: any) Observable<any> {
-    return this.http.get(`${this.baseUrl}/movie/${data}?api_Key=${this.apiKey}&language=pt-BR`);
+  movieDetails(data: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${data}?api_key=${this.apiKey}&language=pt-BR`);
+  }
+
+  //Movie Trailer API Data
+  movieVideo(data: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${data}/videos?api_key=${this.apiKey}&language=pt-BR`);
+  }
+  
+  //Movie Cast API Data
+  movieCast(data: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movie/${data}/credits?api_key=${this.apiKey}&language=pt-BR`);
+  }
 }
